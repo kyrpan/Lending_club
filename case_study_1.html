@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Case study #1</title>
+</head>
+<style>
+div {
+      text-align: center;
+    }
+h1{
+
+text-align: center;
+
+}
+p{
+
+text-align: center;
+margin-right: 200px;
+margin-left: 200px;
+
+}
+</style>
+<body>
+
+<h1>Lending Club</h1>
+
+<p><b>Plots of dataset</b></p>
+
+<div class="img-with-text">
+<img src="Figure_1.png" alt="Income vs Loan amount" width="500" height="400" class="center" > <br>
+<p> In this figure, we observe a wide scale of annual incomes, although the loan amounts are comparatevily maintained at a lower scale, with no particular spikes. </p>
+</div>
+
+<div class="img-with-text">
+<img src="Figure_2.png" alt="Number of years in the job" width="500" height="400" class="center" > <br>
+<p> From the pie plot, we can see that the majority of people that have received a loan are working for 10 or more years in their profession. </p>
+</div>
+
+<div class="img-with-text">
+<img src="Figure_3.png" alt="Loan purpose" width="500" height="400" class="center" > <br>
+<p> As for the loan purpose, most people get a loan for debt consolidation, followed by the ones regarding credit cards. </p>
+</div>
+
+<div class="img-with-text">
+<img src="Figure_4.png" alt="State of residence" width="700" height="600" class="center" > <br>
+<p> Regarding the state of residence, the vast majority stays in California, followed by Texas, New York and Florida. </p>
+</div>
+
+<div class="img-with-text">
+<img src="Figure_5.png" alt="Type of homeownership" width="500" height="400" class="center"> <br>
+<p> The majority of people that receives a loan does not own their own house.  </p>
+</div>
+
+<p><b>Description of the process</b></p>
+
+<p>• The dataset contains both numeric and categorical values, with some columns containing NA values as well. </p>
+
+<p>• For the featurers selection, I dropped the columns that contained a lot of NA values, to avoid bias. Afterwards, I also discarded the columns with categorical variables of many values (e.g. state). I kept the categorical columns with max 11 different values (e.g. loan purpose).</p>
+
+<p>• Then, I performed one hot encoding to transform the categorical to numeric variables, rather than a simple LabelEncoder, in order to maintain equal weights in the values of the variables.</p>
+
+<p>• I split the dataset into X and y (interest_rate) and then I split the train and test set with a ratio of 0.8 - 0.2. I used the StandardScaler for the scalinf of the train data.</p>
+
+<p>• Regarding the prediction models, I worked with LinearRegression and SVR. In order to evaluate the models, I used the mean squared error metric (rmse) and I plotted the actual and predicted y set. The rmse is equal to 3.89 for both models wich is not a good score. Also the figures indicate that the predictions of the model are not close to the actual values.</p>
+
+<p>• Having more time, I would try different combinations of features, as well as experiments with other models (e.g. Random Forest). A next step would be to ensemble and boosting algoriths (e.g. GradientBoosting or XGBoost).</p>
+
+<div class="img-with-text">
+<img src="Figure_6.png" alt="LR" width="500" height="400" class="center"> <br>
+<p> Actual and predicted values with LinearRegression. </p>
+</div>
+
+<div class="img-with-text">
+<img src="Figure_7.png" alt="SVR" width="500" height="400" class="center"> <br>
+<p> Actual and predicted values with SVR.  </p>
+</div>
+
+</body>
+</html>
